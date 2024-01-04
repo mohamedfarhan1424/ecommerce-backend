@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  devtools:
+    add-properties: true
+  application:
+    name: ecommerce-backend
+  datasource:
+    url: jdbc:mysql://localhost:3306/ecommerce
+    username: root
+    password: '@1424Sfr'
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+secret:
+  key: 1df38d9bda278dc5bb3da911a2b1dd4cb093e7eed0cb1c77641f05c70e3c2b42
