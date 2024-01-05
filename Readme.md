@@ -32,7 +32,14 @@ This API endpoint initiates the phone login process by sending an OTP (One-Time 
 | message     | String   | Success message indicating OTP sent successfully |
 | status      | Integer  | HTTP status code (200 for success)|
 
-
+- **Status:** 200 OK
+- **Body (JSON):**
+  ```json
+  {
+    "message": "OTP sent successfully",
+    "status": 200
+  }
+  ```
 
 
 # User Phone Verification API
@@ -71,6 +78,16 @@ This API endpoint verifies a user's phone number using an OTP (One-Time Password
 | token       | String   | Authorization token for the user for further API calls |
 | newUser     | Boolean  | Indicates if the user is new or not                    |
 
+- **Status:** 200 OK
+- **Body (JSON):**
+  ```json
+  {
+    "message": "OTP verified successfully",
+    "status": 200,
+    "token": "eyJhbGciOiJIUzI1NiJ9....",
+    "newUser": false
+  }
+  ```
 
 ### Error Responses
 1. OTP not sent
