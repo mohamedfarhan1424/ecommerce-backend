@@ -100,11 +100,10 @@ public class UserServiceImpl implements UserService {
                     user.setOtp(null);
                     user.setExpiresIn(null);
 
+                    phoneVerifyResponse.setNewUser(user.getEmail().isEmpty());
+
                     if(user.getRoles().isEmpty()) {
                         user.getRoles().add(roleRepository.findRoleByRoleName(Roles.USER));
-                        phoneVerifyResponse.setNewUser(true);
-                    }else{
-                        phoneVerifyResponse.setNewUser(false);
                     }
 
                     userRepository.save(user);
